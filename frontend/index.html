@@ -1,0 +1,9 @@
+<div id="root"></div>
+<script>
+  const showBootstrapError = (message) => {
+    document.getElementById('root').innerHTML = `<main style="padding:48px;color:#ffc5bc;font-family:system-ui"><h1>Dashboard failed to start</h1><pre>${String(message)}</pre></main>`;
+  };
+  window.addEventListener('error', event => showBootstrapError(event.message));
+  window.addEventListener('unhandledrejection', event => showBootstrapError(event.reason?.message || event.reason));
+</script>
+<script type="module" src="/src/main.jsx"></script>
